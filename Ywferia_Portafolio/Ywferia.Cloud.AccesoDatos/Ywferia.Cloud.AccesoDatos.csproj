@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ywferia.Cloud.Modelo\Ywferia.Cloud.Modelo.csproj" />
+    <ProjectReference Include="..\Ywferia.Cloud.Utilitarios\Ywferia.Cloud.Utilitarios.csproj" />
+  </ItemGroup>
+
+</Project>
