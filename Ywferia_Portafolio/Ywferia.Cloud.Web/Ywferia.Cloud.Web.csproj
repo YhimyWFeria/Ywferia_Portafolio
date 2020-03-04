@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ywferia.Cloud.AccesoDatos\Ywferia.Cloud.AccesoDatos.csproj" />
+    <ProjectReference Include="..\Ywferia.Cloud.Logica\Ywferia.Cloud.Logica.csproj" />
+    <ProjectReference Include="..\Ywferia.Cloud.Modelo\Ywferia.Cloud.Modelo.csproj" />
+    <ProjectReference Include="..\Ywferia.Cloud.Utilitarios\Ywferia.Cloud.Utilitarios.csproj" />
+  </ItemGroup>
+
+
+
+</Project>
