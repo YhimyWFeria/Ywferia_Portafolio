@@ -11,6 +11,12 @@
     <ProjectReference Include="..\Ywferia.Cloud.Utilitarios\Ywferia.Cloud.Utilitarios.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Identity\" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
 
 
 </Project>
