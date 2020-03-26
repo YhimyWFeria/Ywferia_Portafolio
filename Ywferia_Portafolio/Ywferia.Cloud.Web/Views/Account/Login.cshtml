@@ -1,0 +1,122 @@
+﻿@using System.Security.Claims
+@model LoginViewModels
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Login Portafolio</title>
+    <!-- Font Awesome -->
+    <link href="~/css/all.css" rel="stylesheet" />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Material Design Bootstrap -->
+
+    <link href="~/css/mdb.min.css" rel="stylesheet" />
+
+    <!-- Your custom styles (optional) -->
+    <link href="~/css/Login.css" rel="stylesheet" />
+</head>
+
+<body class="login-page">
+
+    <!-- Main Navigation -->
+    <header>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+            <div class="container">
+                <a class="navbar-brand" href="#"><strong>PORTAFOLIO</strong></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+                        aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- Navbar -->
+        <!-- Intro Section -->
+        <section class="view intro-2">
+            <div class="mask rgba-stylish-strong h-100 d-flex justify-content-center align-items-center">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-6 col-md-10 col-sm-12 mx-auto mt-5">
+                            <form asp-controller="Account" asp-action="Login" method="post">
+                                <!-- Form with header -->
+                                <div class="card wow fadeIn" data-wow-delay="0.3s">
+                                    <div class="card-body">
+
+                                        <!-- Header -->
+                                        <div class="form-header purple-gradient">
+                                            <h3 class="font-weight-500 my-2 py-1"><i class="fas fa-user"></i> Log in:</h3>
+                                        </div>
+                                        @*<div asp-validation-summary="All" class="text-white-50"></div>*@
+                                        <!-- Body -->
+                                        <div class="md-form">
+                                            <i class="fas fa-user prefix white-text"></i>
+                                            <input asp-for="Input.Usu_Nombre" type="text" class="form-control">
+                                            <label for="orangeForm-name">Usuario</label>
+                                            <span asp-validation-for="Input.Usu_Nombre" class="text-white"></span>
+                                        </div>
+                                        <div class="md-form">
+                                            <i class="fas fa-lock prefix white-text"></i>
+                                            <input asp-for="Input.Usu_Contrasena" type="password" class="form-control">
+                                            <label for="orangeForm-pass">Contraseña</label>
+                                            <span asp-validation-for="Input.Usu_Contrasena" class="text-white"></span>
+                                        </div>
+
+                                        <div class="text-center">
+                                            <button type="submit" class="btn purple-gradient btn-lg">Sign up</button>
+                                            <hr class="mt-4">
+                                            <div class="inline-ul text-center d-flex justify-content-center">
+                                                <a class="p-2 m-2 fa-lg tw-ic"><i class="fab fa-twitter white-text"></i></a>
+                                                <a href="https://www.linkedin.com/in/yhimywferia/" class="p-2 m-2 fa-lg li-ic"><i class="fab fa-linkedin-in white-text"> </i></a>
+                                                <a href="https://www.instagram.com/yhimyw.feria/" class="p-2 m-2 fa-lg ins-ic"><i class="fab fa-instagram white-text"> </i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Form with header -->
+                            </form>
+                            <label id="IndexMesssage" class="mce-error">@Html.DisplayFor(m => m.ErrorMessage) </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Intro Section -->
+
+    </header>
+    <!-- Main Navigation -->
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script src="~/js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script src="~/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/js/bootstrap.js"></script>
+    <!-- MDB core JavaScript -->
+    <script src="~/js/mdb.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- Custom scripts -->
+    <script src="~/ViewsJs/Proyecto/helper.js"></script>
+    <script src="~/ViewsJs/Account/JsAccount.js"></script>
+    <script>new WOW().init();</script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var baseUrl = "@Url.Content("~")";
+            loginjs.iniciar();
+        });
+    </script>
+
+</body>
+
+</html>

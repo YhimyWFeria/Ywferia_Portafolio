@@ -4,4 +4,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Unity" Version="5.11.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ywferia.Cloud.AccesoDatos\Ywferia.Cloud.AccesoDatos.csproj" />
+    <ProjectReference Include="..\Ywferia.Cloud.Logica\Ywferia.Cloud.Logica.csproj" />
+  </ItemGroup>
+
 </Project>
