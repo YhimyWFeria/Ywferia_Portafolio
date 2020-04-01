@@ -1,7 +1,4 @@
-﻿
-
-using Unity;
-
+﻿using Unity;
 namespace Ywferia.Cloud.Inyeccion
 {
     public class Dependencia

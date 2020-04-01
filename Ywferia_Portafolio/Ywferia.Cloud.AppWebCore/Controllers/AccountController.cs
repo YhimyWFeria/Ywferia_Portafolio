@@ -13,6 +13,7 @@ namespace Ywferia.Cloud.AppWebCore.Controllers
     public class AccountController : Controller
     {
         private readonly SignInManager<IdentityUser> _signInManager;
+
         private readonly ILogger<LogoutModel> _logger;
         private readonly ILog_Usuarios _aDUsuario;
         public AccountController(SignInManager<IdentityUser> signInManager, ILogger<LogoutModel> logger)
@@ -30,13 +31,23 @@ namespace Ywferia.Cloud.AppWebCore.Controllers
         {
             if (ModelState.IsValid)
             {
-                var data = _aDUsuario.SeguridadLogin(model.Input.Usu_Nombre, model.Input.Usu_Contrasena);
+                var ResponseLogin = _aDUsuario.SeguridadLogin(model.Input.Usu_Nombre, model.Input.Usu_Contrasena);
 
-                if( data == 1)
+                if (ResponseLogin == 1)
                 {
-                    var result = await _signInManager.PasswordSignInAsync("yferia@sapia.com.pe", "P@ssw0rd", false, false);
 
-                    if (result.Succeeded)
+                    var ResponseGetDate = _aDUsuario.GetSeguridadUsuario(model.Input.Usu_Nombre);
+
+                    Microsoft.AspNetCore.Identity.SignInResult actionResult;
+                    if (ResponseGetDate.TipoUsuario.Seg_TipoUsuarioId == 1)
+                    {
+                        actionResult = await _signInManager.PasswordSignInAsync("yferia@sapia.com.pe", "P@ssw0rd", false, false);
+                    }
+                    else
+                    {
+                        actionResult = await _signInManager.PasswordSignInAsync("invitado@ver.com.pe", "P@ssw0rd", false, false);
+                    }
+                    if (actionResult.Succeeded)
                     {
                         if (!string.IsNullOrEmpty(model.Input.ReturnUrl) && Url.IsLocalUrl(model.Input.ReturnUrl))
                         {
@@ -50,12 +61,14 @@ namespace Ywferia.Cloud.AppWebCore.Controllers
                 }
                 else
                 {
-
+                    ModelState.AddModelError("", "Invalid login attempt");
+                    model.ErrorMessage = "Usuario o contraseña Incorrecta.";
+                    return View("Index", model);
                 }
             }
             ModelState.AddModelError("", "Invalid login attempt");
-            model.ErrorMessage = "Login fallido intentalo nuevamente";
-            return View(model);
+            model.ErrorMessage = "Login falido intentalo nuevamente";
+            return View("Index", model);
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿
-
-namespace Ywferia.Cloud.AccesoDatos.DAccesoDatosConf
+﻿namespace Ywferia.Cloud.AccesoDatos.DAccesoDatosConf
 {
     public static class AccesConfig
     {

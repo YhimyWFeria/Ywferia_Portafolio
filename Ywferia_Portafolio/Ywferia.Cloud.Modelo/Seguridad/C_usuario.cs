@@ -5,6 +5,10 @@ namespace Ywferia.Cloud.Modelo.Seguridad
 {
     public class C_usuario
     {
+        public C_usuario()
+        {
+            TipoUsuario = new C_TipoUsuario();
+        }
         public int Seg_usuariosId { get; set; }
 
         [Required(ErrorMessage = "<font color:'White'> Ingresar Nombre </font>")]

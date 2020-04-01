@@ -11,13 +11,11 @@ namespace Ywferia.Cloud.AccesoDatos.AccesoDatos.Seguridad
 {
     public class AD_usuario : IAD_usuario
     {
-        
+
         public string Eliminar(string esquema, string id)
         {
             return "";
-        } 
-         
-
+        }
         public C_usuario GetSeguridadUsuario(string usuario)
         {
             C_usuario _Usuario = new C_usuario();
@@ -35,13 +33,15 @@ namespace Ywferia.Cloud.AccesoDatos.AccesoDatos.Seguridad
                     {
                         while (data.Read())
                         {
-                            _Usuario = new C_usuario();
-                            _Usuario.Seg_usuariosId = (int)data["Seg_usuariosId"];
-                            _Usuario.Usu_Nombre = data["Usu_Nombre"].ToString();
-                            _Usuario.Usu_Contrasena = data["Usu_Contrasena"].ToString();
-                            _Usuario.Usu_TipoUsuario = data["Usu_TipoUsuario"].ToString();
+                            _Usuario = new C_usuario
+                            {
+                                Seg_usuariosId = (int)data["Seg_usuariosId"],
+                                Usu_Nombre = data["Usu_Nombre"].ToString(),
+                                Usu_Contrasena = data["Usu_Contrasena"].ToString(),
+                                Usu_TipoUsuario = data["Usu_TipoUsuario"].ToString()
+                            };
                             _Usuario.TipoUsuario.Seg_TipoUsuarioId = (int)data["Seg_TipoUsuarioId"];
-                            _Usuario.TipoUsuario.Tip_NombreTipo = (int)data["Tip_NombreTipo"];
+                            _Usuario.TipoUsuario.Tip_NombreTipo = data["Tip_NombreTipo"].ToString();
                         }
                     }
                 }
@@ -68,7 +68,7 @@ namespace Ywferia.Cloud.AccesoDatos.AccesoDatos.Seguridad
             var mamam = new CollectionPage<C_usuario>();
 
             return mamam;
-        } 
+        }
         public string Modificar(string esquema, C_usuario item)
         {
             return "";
@@ -81,7 +81,7 @@ namespace Ywferia.Cloud.AccesoDatos.AccesoDatos.Seguridad
         }
 
         public C_usuario ObtenerPorId(string esquema, C_usuario item)
-        { 
+        {
             C_usuario _Usuario = new C_usuario();
             return _Usuario;
         }

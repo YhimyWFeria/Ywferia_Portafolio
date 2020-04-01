@@ -8,6 +8,6 @@ namespace Ywferia.Cloud.Modelo.Seguridad
 
         }
         public int Seg_TipoUsuarioId { get; set; }
-        public int Tip_NombreTipo { get; set; }
+        public string Tip_NombreTipo { get; set; }
     }
 }

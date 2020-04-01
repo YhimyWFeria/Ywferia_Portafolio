@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -44,7 +47,7 @@
                 <!-- Logo -->
                 <li class="logo-sn waves-effect py-3">
                     <div class="text-center">
-                        <a href="#" class="pl-0"><img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png"></a>
+                        <a class="navbar-brand" href="#"><strong>PORTAFOLIO</strong></a>
                     </div>
                 </li>
 
@@ -216,15 +219,25 @@
                 <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i></a>
             </div>
 
-            <!-- Breadcrumb -->
-            <div class="breadcrumb-dn mr-auto">
-                <p>Profile v.3</p>
-            </div>
 
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <!-- Breadcrumb -->
+                <div class="breadcrumb-dn mr-auto">
+                    <p>Hello @User.Identity.Name!</p>
+                </div>
+            }
+            else
+            {
+                <!-- Breadcrumb -->
+                <div class="breadcrumb-dn mr-auto">
+                    <p>Profile v.3</p>
+                </div>
+            }
             <!-- Navbar links -->
             <ul class="nav navbar-nav nav-flex-icons ml-auto">
 
-                <!-- Dropdown -->
+                <!-- Dropdown
                 <li class="nav-item dropdown notifications-nav">
                     <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
@@ -254,7 +267,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link waves-effect"><i class="far fa-comments"></i> <span class="clearfix d-none d-sm-inline-block">Support</span></a>
-                </li>
+                </li>-->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle waves-effect" href="#" id="userDropdown" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">

@@ -1,9 +1,7 @@
 ﻿using Ywferia.Cloud.AccesoDatos.IAccesosDatos.ISeguridad;
 using Ywferia.Cloud.Modelo.Infraestructura;
 using Ywferia.Cloud.Modelo.Seguridad;
-using Ywferia.Cloud.Utilitarios.Enumerados;
-using System.Linq;
-using System.Transactions;
+using Ywferia.Cloud.Utilitarios.Enumerados; 
 using Ywferia.Cloud.Logica.ILogica.ISeguridad;
 
 namespace Ywferia.Cloud.Logica.Logica.Seguridad

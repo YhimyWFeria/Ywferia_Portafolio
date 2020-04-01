@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Ywferia.Cloud.Utilitarios.DataUtil
 {
     public static class TimeZoneUtils

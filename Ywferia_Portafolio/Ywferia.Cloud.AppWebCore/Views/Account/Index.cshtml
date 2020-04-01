@@ -59,13 +59,13 @@
                                         <!-- Body -->
                                         <div class="md-form">
                                             <i class="fas fa-user prefix white-text"></i>
-                                            <input asp-for="Input.Usu_Nombre" type="text" class="form-control">
+                                            <input asp-for="Input.Usu_Nombre" type="text" class="form-control" value="INVITADO">
                                             <label for="orangeForm-name">Usuario</label>
                                             <span asp-validation-for="Input.Usu_Nombre" class="text-white"></span>
                                         </div>
                                         <div class="md-form">
                                             <i class="fas fa-lock prefix white-text"></i>
-                                            <input asp-for="Input.Usu_Contrasena" type="password" class="form-control">
+                                            <input asp-for="Input.Usu_Contrasena" type="password" class="form-control" value="123">
                                             <label for="orangeForm-pass">Contraseña</label>
                                             <span asp-validation-for="Input.Usu_Contrasena" class="text-white"></span>
                                         </div>
@@ -81,10 +81,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Form with header -->
-                                <label id="IndexMesssage" class="mce-error">@Html.DisplayFor(m => m.ErrorMessage) </label>
+                                <!-- Form with header --> 
                             </form> 
-                          
+                            <label id="IndexMesssage" class="mce-error white-text">@Html.DisplayFor(m => m.ErrorMessage) </label>
                         </div>
                     </div>
                 </div>

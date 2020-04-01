@@ -697,21 +697,11 @@ namespace Ywferia.Cloud.Utilitarios.Enumerados
     #endregion
 
     #region "Seleccion"
-    public enum TipoCorreo
-    {
-        FlujoAprobacion = 1,
-        AvisoAnalistaSeleccion = 2,
-        RechazoFlujoAprobacion = 3,
-        AprobacionFlujoAprobacion = 4,
-        SeleccionAprobacion = 5,
-        SeleccionRechazo = 6,
-        EtapaFinalAprobacion = 7,
-        ReqAprobacionIngreso = 8,
-        ReqRechazoIngreso = 9,
-        ReqAprobacionIngresoFinal = 10,
-        ReqNuevoIngresoPersonal = 11,
-        ReqModificacion = 12
-    }
+    //public enum TipoCorreo
+    //{
+    //   Personal=1,
+    //   Trabajo=2
+    //}
     #endregion
 
     #region "Gestion Movimiento Personal"
