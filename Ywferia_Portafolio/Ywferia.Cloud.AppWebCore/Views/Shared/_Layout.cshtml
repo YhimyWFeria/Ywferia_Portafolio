@@ -64,133 +64,27 @@
                 <li>
                     <ul class="collapsible collapsible-accordion">
 
-                        <li>
-                            <a class="collapsible-header waves-effect arrow-r">
-                                <i class="w-fa fas fa-tachometer-alt"></i>Dashboards<i class="fas fa-angle-down rotate-icon"></i>
-                            </a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li>
-                                        <a href="../dashboards/v-1.html" class="waves-effect">Version 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="../dashboards/v-2.html" class="waves-effect">Version 2</a>
-                                    </li>
 
-                                </ul>
-                            </div>
-                        </li>
                         <li>
                             <a class="collapsible-header waves-effect arrow-r">
-                                <i class="w-fa fas fa-image"></i>Pages<i class="fas fa-angle-down rotate-icon"></i>
+                                <i class="w-fa fas fa-th"></i>Mantenimientos<i class="fas fa-angle-down rotate-icon"></i>
                             </a>
                             <div class="collapsible-body">
                                 <ul>
                                     <li>
-                                        <a href="../pages/login.html" class="waves-effect">Login</a>
+                                        @Html.ActionLink("Tipo Correo", "TipoCorreo", "Genericos",null, new { @class = "waves-effect" } ) 
                                     </li>
-                                    <li>
-                                        <a href="../pages/register.html" class="waves-effect">Register</a>
+                                    <li> 
+                                        @Html.ActionLink("Historial de correos", "HistorialCorreo", "Genericos", null, new { @class = "waves-effect" })
                                     </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a class="collapsible-header waves-effect arrow-r">
-                                <i class="w-fa fas fa-user"></i>Profile<i class="fas fa-angle-down rotate-icon"></i>
-                            </a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li>
-                                        <a href="../profile/basic-1.html" class="waves-effect">Basic 1</a>
+                                    <li> 
+                                        @Html.ActionLink("Historial de puestos", "HistorialPuesto", "Genericos", null, new { @class = "waves-effect" })
                                     </li>
-                                    <li>
-                                        <a href="../profile/basic-2.html" class="waves-effect">Basic 2</a>
+                                    <li> 
+                                        @Html.ActionLink("Perfil", "Perfil", "Genericos", null, new { @class = "waves-effect" })
                                     </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a class="collapsible-header waves-effect arrow-r">
-                                <i class="w-fa fab fa-css3"></i>CSS<i class="fas fa-angle-down rotate-icon"></i>
-                            </a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li>
-                                        <a href="../css/grid.html" class="waves-effect">Grid system</a>
-                                    </li>
-                                    <li>
-                                        <a href="../css/media.html" class="waves-effect">Media object</a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a class="collapsible-header waves-effect arrow-r">
-                                <i class="w-fa fas fa-th"></i>Components<i class="fas fa-angle-down rotate-icon"></i>
-                            </a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li>
-                                        <a href="../components/buttons.html" class="waves-effect">Buttons</a>
-                                    </li>
-                                    <li>
-                                        <a href="../components/cards.html" class="waves-effect">Cards</a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a class="collapsible-header waves-effect arrow-r">
-                                <i class="w-fa far fa-check-square"></i>Forms<i class="fas fa-angle-down rotate-icon"></i>
-                            </a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li>
-                                        <a href="../forms/basic.html" class="waves-effect">Basic</a>
-                                    </li>
-                                    <li>
-                                        <a href="../forms/extended.html" class="waves-effect">Extended</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a class="collapsible-header waves-effect arrow-r">
-                                <i class="w-fa fas fa-table"></i>Tables<i class="fas fa-angle-down rotate-icon"></i>
-                            </a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li>
-                                        <a href="../tables/basic.html" class="waves-effect">Basic</a>
-                                    </li>
-                                    <li>
-                                        <a href="../tables/extended.html" class="waves-effect">Extended</a>
-                                    </li>
-                                    <li>
-                                        <a href="../tables/datatables.html" class="waves-effect">DataTables.net</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a class="collapsible-header waves-effect arrow-r">
-                                <i class="w-fa fas fa-map"></i>Maps<i class="fas fa-angle-down rotate-icon"></i>
-                            </a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li>
-                                        <a href="../maps/google.html" class="waves-effect">Google Maps</a>
-                                    </li>
-                                    <li>
-                                        <a href="../maps/full.html" class="waves-effect">Full screen map</a>
-                                    </li>
-                                    <li>
-                                        <a href="../maps/vector.html" class="waves-effect">Vector world map</a>
+                                    <li> 
+                                        @Html.ActionLink("Proyectos", "Proyecto", "Proyecto", null, new { @class = "waves-effect" })
                                     </li>
                                 </ul>
                             </div>
@@ -198,10 +92,10 @@
 
                         <!-- Simple link -->
                         <li>
-                            <a href="../alerts/alerts.html" class="collapsible-header waves-effect"><i class="w-fa far fa-bell"></i>Alerts</a>
+                            <a href="#" class="collapsible-header waves-effect"><i class="w-fa far fa-bell"></i>Pefil General</a>
                         </li>
                         <li>
-                            <a href="../modals/modals.html" class="collapsible-header waves-effect"><i class="w-fa fas fa-bolt"></i>Modals</a>
+                            <a href="#" class="collapsible-header waves-effect"><i class="w-fa fas fa-bolt"></i>Portafolio</a>
                         </li>
                     </ul>
                 </li>

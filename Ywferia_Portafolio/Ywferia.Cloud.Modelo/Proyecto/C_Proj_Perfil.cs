@@ -10,7 +10,7 @@ namespace Ywferia.Cloud.Modelo.Proyecto
             Historial_Puestos = new C_Historial_Puestos();
             Historial_correos = new C_Historial_correos();
         }
-        public int PK_Proj_Perfil { get; set; }
+        public int Proj_PerfilId { get; set; }
         public C_Historial_Puestos Historial_Puestos { get; set; }
         public string UbicacionActual { get; set; }
         public string Descripcion_Perfil { get; set; }
