@@ -1,5 +1,4 @@
-﻿using System;
-using Ywferia.Cloud.AccesoDatos.IAccesosDatos.IGenericos;
+﻿using Ywferia.Cloud.AccesoDatos.IAccesosDatos.IGenericos;
 using Ywferia.Cloud.Logica.ILogica.IGenericos;
 using Ywferia.Cloud.Modelo.Genericos;
 using Ywferia.Cloud.Modelo.Infraestructura;
@@ -11,7 +10,7 @@ namespace Ywferia.Cloud.Logica.Logica.Genericos
     {
         private readonly IAD_Historial_correos _iAD_Historial;
 
-        public Log_Historial_correos(IAD_Historial_correos  iAD_Historial)
+        public Log_Historial_correos(IAD_Historial_correos iAD_Historial)
         {
             _iAD_Historial = iAD_Historial;
         }

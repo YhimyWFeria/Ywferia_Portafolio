@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using OfficeOpenXml;
+﻿using OfficeOpenXml;
 using OfficeOpenXml.Style;
-using System.IO;
+using System;
+using System.Collections.Generic;
 using System.Data;
-using System.Drawing; 
+using System.Drawing;
+using System.IO;
+using System.Linq;
 namespace Ywferia.Cloud.Utilitarios.Exportador
 {
     public class Exportador
@@ -489,7 +489,7 @@ namespace Ywferia.Cloud.Utilitarios.Exportador
 
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 //Varias.EscribeLog(ex);
                 value = null;

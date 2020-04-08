@@ -9,7 +9,7 @@ namespace Ywferia.Cloud.Logica.Logica.Genericos
     public class Log_Historial_Puestos : ILog_Historial_Puestos
     {
         private readonly IAD_Historial_Puestos _Historial_Puestos;
-        
+
         public Log_Historial_Puestos(IAD_Historial_Puestos Historial_Puestos)
         {
             _Historial_Puestos = Historial_Puestos;

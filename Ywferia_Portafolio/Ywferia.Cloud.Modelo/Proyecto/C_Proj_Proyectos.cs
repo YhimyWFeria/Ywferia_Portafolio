@@ -1,6 +1,6 @@
 ﻿namespace Ywferia.Cloud.Modelo.Proyecto
 {
-   public class C_Proj_Proyectos
+    public class C_Proj_Proyectos
     {
         public int Proj_ProyectosId { get; set; }
         public string NombreProyect { get; set; }

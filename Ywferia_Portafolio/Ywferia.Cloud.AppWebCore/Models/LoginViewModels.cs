@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc; 
+﻿using Microsoft.AspNetCore.Mvc;
 using Ywferia.Cloud.Modelo.Seguridad;
 
 namespace Ywferia.Cloud.AppWebCore.Models

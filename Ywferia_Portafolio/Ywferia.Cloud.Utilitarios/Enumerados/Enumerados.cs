@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Ywferia.Cloud.Utilitarios.Enumerados
+﻿namespace Ywferia.Cloud.Utilitarios.Enumerados
 {
     #region Columnas    
-     
+
     public enum ColumnasGrupoFuncional
     {
         Descripcion,

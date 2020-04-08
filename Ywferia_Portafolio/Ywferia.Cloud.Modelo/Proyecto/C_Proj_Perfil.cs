@@ -1,4 +1,4 @@
-﻿ 
+﻿
 using Ywferia.Cloud.Modelo.Genericos;
 
 namespace Ywferia.Cloud.Modelo.Proyecto

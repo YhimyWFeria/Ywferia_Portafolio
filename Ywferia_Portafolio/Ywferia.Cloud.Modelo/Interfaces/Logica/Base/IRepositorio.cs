@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Ywferia.Cloud.Modelo.Infraestructura;
+﻿using Ywferia.Cloud.Modelo.Infraestructura;
 using Ywferia.Cloud.Utilitarios.Enumerados;
 
 namespace Ywferia.Cloud.Modelo.Interfaces.Logica.Base
@@ -32,7 +29,7 @@ namespace Ywferia.Cloud.Modelo.Interfaces.Logica.Base
         /// <returns>codigo de error</returns>
         string Eliminar(string esquema, string id);
 
-    
+
         /// <summary>
         /// Consulta una lista de objetos
         /// </summary>
@@ -52,7 +49,7 @@ namespace Ywferia.Cloud.Modelo.Interfaces.Logica.Base
         /// <param name="codigo">codigo de registro</param>
         /// <returns>objeto resultante</returns>
         T ObtenerPorId(string esquema, string codigo);
-         
+
 
     }
 }

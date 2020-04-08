@@ -1,11 +1,11 @@
-﻿using  Ywferia.Cloud.Utilitarios.Enumerados;
-using DocumentFormat.OpenXml;
+﻿using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System;
 using System.IO;
 using System.Linq;
- 
+using Ywferia.Cloud.Utilitarios.Enumerados;
+
 namespace Ywferia.Cloud.Utilitarios.ExcelUtility
 {
     public class EscribirExcel

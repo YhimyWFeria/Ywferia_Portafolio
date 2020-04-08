@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq; 
+using System.Linq;
 using Ywferia.Cloud.Utilitarios.Enumerados;
 
 namespace Ywferia.Cloud.Utilitarios.DataUtil
@@ -12,7 +12,7 @@ namespace Ywferia.Cloud.Utilitarios.DataUtil
 
         public static string FormatObjectSQL(string esquema, string ObjectSQL)
         {
-            return string.Format("{0}.{1}", esquema, ObjectSQL); 
+            return string.Format("{0}.{1}", esquema, ObjectSQL);
         }
         public static IEnumerable<T> OrdenarPorColumna<T>(this IEnumerable<T> lista, string orden = "", DireccionOrden direccion = DireccionOrden.Asc) where T : class
         {

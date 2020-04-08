@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Ywferia.Cloud.Inyeccion;
 using Ywferia.Cloud.Logica.ILogica.IGenericos;
 
@@ -15,7 +11,7 @@ namespace Ywferia.Cloud.AppWebCore.Controllers
         public GenericosController()
         {
             _TipoCorreo = Dependencia.Resolve<ILog_TipoCorreo>();
-        } 
+        }
 
         public IActionResult TipoCorreo()
         {

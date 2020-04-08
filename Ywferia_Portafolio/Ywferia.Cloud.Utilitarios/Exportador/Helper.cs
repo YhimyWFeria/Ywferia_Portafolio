@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Linq; 
+using System.Linq;
 namespace Ywferia.Cloud.Utilitarios.Exportador
 {
     public class Helper

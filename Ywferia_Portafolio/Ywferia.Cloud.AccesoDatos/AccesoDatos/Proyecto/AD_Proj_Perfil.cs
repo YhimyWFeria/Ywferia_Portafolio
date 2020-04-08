@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.SqlClient; 
+﻿using Microsoft.Data.SqlClient;
 using System.Collections.Generic;
 using System.Data;
 using Ywferia.Cloud.AccesoDatos.DAccesoDatosConf;

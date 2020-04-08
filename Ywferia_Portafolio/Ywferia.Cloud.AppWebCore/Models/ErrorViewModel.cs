@@ -1,5 +1,3 @@
-using System;
-
 namespace Ywferia.Cloud.AppWebCore.Models
 {
     public class ErrorViewModel

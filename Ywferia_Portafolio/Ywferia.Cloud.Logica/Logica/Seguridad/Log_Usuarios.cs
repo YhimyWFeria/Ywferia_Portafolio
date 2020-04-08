@@ -1,8 +1,8 @@
 ﻿using Ywferia.Cloud.AccesoDatos.IAccesosDatos.ISeguridad;
+using Ywferia.Cloud.Logica.ILogica.ISeguridad;
 using Ywferia.Cloud.Modelo.Infraestructura;
 using Ywferia.Cloud.Modelo.Seguridad;
-using Ywferia.Cloud.Utilitarios.Enumerados; 
-using Ywferia.Cloud.Logica.ILogica.ISeguridad;
+using Ywferia.Cloud.Utilitarios.Enumerados;
 
 namespace Ywferia.Cloud.Logica.Logica.Seguridad
 {
@@ -35,12 +35,12 @@ namespace Ywferia.Cloud.Logica.Logica.Seguridad
             return _aDUsuario.Listado(esquema, criterio, pagina, elementosPorPagina, orden, DireccionOrden.Asc);
         }
 
-   
+
 
         public C_usuario ObtenerPorId(string esquema, string codigo)
         {
             return _aDUsuario.ObtenerPorId(esquema, codigo);
-        } 
+        }
 
         public int SeguridadLogin(string usuario, string pass)
         {

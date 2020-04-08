@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Ywferia.Cloud.Modelo.Infraestructura
 {

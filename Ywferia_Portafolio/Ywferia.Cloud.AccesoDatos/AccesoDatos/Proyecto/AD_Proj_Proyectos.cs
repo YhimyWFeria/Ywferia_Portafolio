@@ -1,5 +1,4 @@
 ﻿using Microsoft.Data.SqlClient;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using Ywferia.Cloud.AccesoDatos.DAccesoDatosConf;
@@ -60,7 +59,7 @@ namespace Ywferia.Cloud.AccesoDatos.AccesoDatos.Proyecto
                 {
                     cn.Close();
                 }
-            } 
+            }
             return retorno;
         }
 
@@ -81,17 +80,18 @@ namespace Ywferia.Cloud.AccesoDatos.AccesoDatos.Proyecto
                         while (dr.Read())
                         {
                             _LisHistorial_Puestos.Add(new C_Proj_Proyectos
-                            { 
+                            {
                                 Proj_ProyectosId = DataUtility.ObjectToInt(dr["Proj_ProyectosId"]),
                                 NombreProyect = DataUtility.ObjectToString(dr["NombreProyect"]),
                                 UrlAddress = DataUtility.ObjectToString(dr["UrlAddress"]),
-                                Descripcion = DataUtility.ObjectToString(dr["Descripcion"]), 
-                                Proj_Perfil = new C_Proj_Perfil() { 
-                                Proj_PerfilId = DataUtility.ObjectToInt(dr["Proj_PerfilId"]),
-                                Historial_Puestos = new C_Historial_Puestos() { Historial_PuestosId = DataUtility.ObjectToInt(dr["Historial_PuestosId"]), Nombre_HistoriaPuesto = DataUtility.ObjectToString(dr["Nombre_HistoriaPuesto"]) },
-                                UbicacionActual = DataUtility.ObjectToString(dr["UbicacionActual"]),
-                                Descripcion_Perfil = DataUtility.ObjectToString(dr["Descripcion_Perfil"]),
-                                Historial_correos = new C_Historial_correos() { Historial_correosId = DataUtility.ObjectToInt(dr["Historial_correosId"]), Mail = DataUtility.ObjectToString(dr["mail"]), Prioridad = DataUtility.ObjectToInt(dr["prioridad"]), V_TipoCorreos = new C_TipoCorreo() { TipoCorreoId = DataUtility.ObjectToInt(dr["TipoCorreoId"]), NombreTipo = DataUtility.ObjectToString(dr["NombreTipo"]) } }
+                                Descripcion = DataUtility.ObjectToString(dr["Descripcion"]),
+                                Proj_Perfil = new C_Proj_Perfil()
+                                {
+                                    Proj_PerfilId = DataUtility.ObjectToInt(dr["Proj_PerfilId"]),
+                                    Historial_Puestos = new C_Historial_Puestos() { Historial_PuestosId = DataUtility.ObjectToInt(dr["Historial_PuestosId"]), Nombre_HistoriaPuesto = DataUtility.ObjectToString(dr["Nombre_HistoriaPuesto"]) },
+                                    UbicacionActual = DataUtility.ObjectToString(dr["UbicacionActual"]),
+                                    Descripcion_Perfil = DataUtility.ObjectToString(dr["Descripcion_Perfil"]),
+                                    Historial_correos = new C_Historial_correos() { Historial_correosId = DataUtility.ObjectToInt(dr["Historial_correosId"]), Mail = DataUtility.ObjectToString(dr["mail"]), Prioridad = DataUtility.ObjectToInt(dr["prioridad"]), V_TipoCorreos = new C_TipoCorreo() { TipoCorreoId = DataUtility.ObjectToInt(dr["TipoCorreoId"]), NombreTipo = DataUtility.ObjectToString(dr["NombreTipo"]) } }
                                 }
                             });
                         }
@@ -126,7 +126,7 @@ namespace Ywferia.Cloud.AccesoDatos.AccesoDatos.Proyecto
                     command.Parameters.Add(new SqlParameter() { ParameterName = "@NombreProyect", DbType = DbType.String, Direction = ParameterDirection.Input, Value = item.NombreProyect });
                     command.Parameters.Add(new SqlParameter() { ParameterName = "@UrlAddress", DbType = DbType.String, Direction = ParameterDirection.Input, Value = item.UrlAddress });
                     command.Parameters.Add(new SqlParameter() { ParameterName = "@Descripcion", DbType = DbType.String, Direction = ParameterDirection.Input, Value = item.Descripcion });
-                    command.Parameters.Add(new SqlParameter() { ParameterName = "@Proj_PerfilId", DbType = DbType.Int32, Direction = ParameterDirection.Input, Value = item.Proj_Perfil.Proj_PerfilId }); 
+                    command.Parameters.Add(new SqlParameter() { ParameterName = "@Proj_PerfilId", DbType = DbType.Int32, Direction = ParameterDirection.Input, Value = item.Proj_Perfil.Proj_PerfilId });
                     command.Parameters.Add(new SqlParameter() { ParameterName = "@as_error", DbType = DbType.String, Direction = ParameterDirection.Output });
                     command.ExecuteNonQuery();
                     retorno = command.Parameters["@as_error"].Value == null ? string.Empty : command.Parameters["@as_error"].Value.ToString();

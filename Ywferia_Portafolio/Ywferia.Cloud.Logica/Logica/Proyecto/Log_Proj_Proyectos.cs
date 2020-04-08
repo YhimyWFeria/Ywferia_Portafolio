@@ -13,11 +13,11 @@ namespace Ywferia.Cloud.Logica.Logica.Proyecto
         public Log_Proj_Proyectos(IAD_Proj_Proyectos iAD_Proj)
         {
             _iAD_Proj = iAD_Proj;
-        } 
+        }
         public string Editar(string esquema, C_Proj_Proyectos item, AccionesMantenimiento accion)
         {
             return _iAD_Proj.Modificar(esquema, item);
-        } 
+        }
         public string Eliminar(string esquema, string codigo)
         {
             return _iAD_Proj.Eliminar(esquema, codigo);

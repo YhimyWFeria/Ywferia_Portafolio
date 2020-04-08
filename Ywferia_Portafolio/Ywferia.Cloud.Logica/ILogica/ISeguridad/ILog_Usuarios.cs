@@ -1,8 +1,5 @@
-﻿
-using Ywferia.Cloud.Modelo.Infraestructura;
-using Ywferia.Cloud.Modelo.Interfaces.Logica.Base;
+﻿using Ywferia.Cloud.Modelo.Interfaces.Logica.Base;
 using Ywferia.Cloud.Modelo.Seguridad;
-using Ywferia.Cloud.Utilitarios.Enumerados;
 
 namespace Ywferia.Cloud.Logica.ILogica.ISeguridad
 {

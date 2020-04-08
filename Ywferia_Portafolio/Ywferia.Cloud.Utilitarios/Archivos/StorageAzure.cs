@@ -1,9 +1,9 @@
 ﻿using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 using System;
-using System.Collections.Generic; 
+using System.Collections.Generic;
 using System.IO;
-using System.Linq; 
+using System.Linq;
 namespace Ywferia.Cloud.Utilitarios.Archivos
 {
     public static class StorageAzure
@@ -17,7 +17,7 @@ namespace Ywferia.Cloud.Utilitarios.Archivos
 
             return lista;
         }
-        public static void SubirArchivo(Stream archivo, string carpeta, string nombre,string conexionST)
+        public static void SubirArchivo(Stream archivo, string carpeta, string nombre, string conexionST)
         {
             var storageAccount = CloudStorageAccount.Parse(conexionST);
             // Create the blob client.
@@ -66,7 +66,7 @@ namespace Ywferia.Cloud.Utilitarios.Archivos
 
         //    return container.ListBlobsSegmentedAsync().OfType<CloudBlockBlob>().Select(file => string.Format("{0},{1},{2},{3},{4}", file.Name, string.Format("{0}\\{1}", ruta.ToLower(), file.Name), string.Empty, file.Properties.LastModified, file.Properties.Length)).ToList();
         //}
-        public static byte[] LeerArchivo(string carpeta, string nombre,string conexionST)
+        public static byte[] LeerArchivo(string carpeta, string nombre, string conexionST)
         {
             var conexion = conexionST;
             // Retrieve storage account from connection string.
@@ -87,7 +87,7 @@ namespace Ywferia.Cloud.Utilitarios.Archivos
             return fileStream.ToArray();
         }
 
-        public static MemoryStream LeeArchivo(string carpeta, string nombre,string conexionST)
+        public static MemoryStream LeeArchivo(string carpeta, string nombre, string conexionST)
         {
             var conexion = conexionST;
             // Retrieve storage account from connection string.
@@ -108,7 +108,7 @@ namespace Ywferia.Cloud.Utilitarios.Archivos
             return fileStream;
         }
 
-        public static bool VerificaArchivo(string carpeta, string nombre,string conexionST)
+        public static bool VerificaArchivo(string carpeta, string nombre, string conexionST)
         {
             // Retrieve storage account from connection string.
             var storageAccount = CloudStorageAccount.Parse(conexionST);
@@ -125,7 +125,7 @@ namespace Ywferia.Cloud.Utilitarios.Archivos
             // Save blob contents to a file.            
             return blockBlob != null;
         }
-        public static bool EliminarArchivo(string carpeta, string nombre,string conexionST)
+        public static bool EliminarArchivo(string carpeta, string nombre, string conexionST)
         {
             bool resultado;
             // Retrieve storage account from connection string.
@@ -153,7 +153,7 @@ namespace Ywferia.Cloud.Utilitarios.Archivos
 
             return resultado;
         }
-        public static void CrearArchivo(IEnumerable<string> detalle, string ruta, string nombre,string conexionST)
+        public static void CrearArchivo(IEnumerable<string> detalle, string ruta, string nombre, string conexionST)
         {
             var stream = new MemoryStream();
             var streamWriter = new StreamWriter(stream);
