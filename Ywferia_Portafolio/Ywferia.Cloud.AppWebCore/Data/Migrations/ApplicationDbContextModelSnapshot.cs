@@ -119,7 +119,7 @@ namespace Ywferia.Cloud.AppWebCore.Data.Migrations
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
-
+                    b.Property<int>("LevelPermisos").HasColumnType("int");
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")

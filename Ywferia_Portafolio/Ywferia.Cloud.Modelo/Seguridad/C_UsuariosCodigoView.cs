@@ -1,15 +1,12 @@
-﻿
-using System;
+﻿using System; 
 
 namespace Ywferia.Cloud.Modelo.Seguridad
 {
-    public class C_TipoUsuario
+   public class C_UsuariosCodigoView
     {
-        public C_TipoUsuario()
-        {
-
-        }
-        public int Seg_TipoUsuarioId { get; set; }
+        public int UsuariosCodigoViewId { get; set; }
+        public C_usuario Usuario { get; set; }
+        public string CodigoGenerado { get; set; }
         public string Tip_NombreTipo { get; set; }
         public DateTime? DateInsert { get; set; }
         public DateTime? DateUpdate { get; set; }

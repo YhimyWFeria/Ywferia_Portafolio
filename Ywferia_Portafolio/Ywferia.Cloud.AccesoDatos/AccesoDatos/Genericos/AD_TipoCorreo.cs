@@ -20,8 +20,10 @@ namespace Ywferia.Cloud.AccesoDatos.AccesoDatos.Genericos
                 try
                 {
                     cn.Open();
-                    SqlCommand command = new SqlCommand(Varias.FormatObjectSQL(esquema, "uspDelTipoCorreo"), cn);
-                    command.CommandType = CommandType.StoredProcedure;
+                    SqlCommand command = new SqlCommand(Varias.FormatObjectSQL(esquema, "uspDelTipoCorreo"), cn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
                     command.Parameters.Add(new SqlParameter() { ParameterName = "@TipoCorreoId", DbType = DbType.Int32, Direction = ParameterDirection.Input, Value = id });
                     command.Parameters.Add(new SqlParameter() { ParameterName = "@as_error", DbType = DbType.String, Direction = ParameterDirection.Output });
                     command.ExecuteNonQuery();
@@ -44,8 +46,10 @@ namespace Ywferia.Cloud.AccesoDatos.AccesoDatos.Genericos
                 try
                 {
                     cn.Open();
-                    SqlCommand command = new SqlCommand(Varias.FormatObjectSQL(esquema, "uspInsertTipoCorreo"), cn);
-                    command.CommandType = CommandType.StoredProcedure;
+                    SqlCommand command = new SqlCommand(Varias.FormatObjectSQL(esquema, "uspInsertTipoCorreo"), cn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
                     command.Parameters.Add(new SqlParameter() { ParameterName = "@NombreTipo", DbType = DbType.String, Direction = ParameterDirection.Input, Value = item.NombreTipo });
                     command.Parameters.Add(new SqlParameter() { ParameterName = "@as_error", DbType = DbType.String, Direction = ParameterDirection.Output });
                     command.ExecuteNonQuery();
@@ -69,8 +73,10 @@ namespace Ywferia.Cloud.AccesoDatos.AccesoDatos.Genericos
                 try
                 {
                     cn.Open();
-                    SqlCommand command = new SqlCommand(Varias.FormatObjectSQL(esquema, "uspListTipoCorreo"), cn);
-                    command.CommandType = CommandType.StoredProcedure;
+                    SqlCommand command = new SqlCommand(Varias.FormatObjectSQL(esquema, "uspListTipoCorreo"), cn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
 
                     using (var dr = command.ExecuteReader())
                     {
@@ -79,7 +85,11 @@ namespace Ywferia.Cloud.AccesoDatos.AccesoDatos.Genericos
                             _LisTipoCorreos.Add(new C_TipoCorreo
                             {
                                 TipoCorreoId = DataUtility.ObjectToInt(dr["TipoCorreoId"]),
-                                NombreTipo = DataUtility.ObjectToString(dr["NombreTipo"]).Trim()
+                                NombreTipo = DataUtility.ObjectToString(dr["NombreTipo"]).Trim(),
+                                DateInsert = DataUtility.ObjectToDateTimeNull(dr["DateInsert"]),
+                                DateUpdate = DataUtility.ObjectToDateTimeNull(dr["DateUpdate"]),
+                                DateDelete = DataUtility.ObjectToDateTimeNull(dr["DateDelete"]),
+                                ActivoRows = DataUtility.ObjectToBool(dr["ActivoRows"])
                             });
                         }
                     }
@@ -108,8 +118,10 @@ namespace Ywferia.Cloud.AccesoDatos.AccesoDatos.Genericos
                 try
                 {
                     cn.Open();
-                    SqlCommand command = new SqlCommand(Varias.FormatObjectSQL(esquema, "uspUpdTipoCorreo"), cn);
-                    command.CommandType = CommandType.StoredProcedure;
+                    SqlCommand command = new SqlCommand(Varias.FormatObjectSQL(esquema, "uspUpdTipoCorreo"), cn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
                     command.Parameters.Add(new SqlParameter() { ParameterName = "@TipoCorreoId", DbType = DbType.Int32, Direction = ParameterDirection.Input, Value = item.TipoCorreoId });
                     command.Parameters.Add(new SqlParameter() { ParameterName = "@NombreTipo", DbType = DbType.String, Direction = ParameterDirection.Input, Value = item.NombreTipo });
                     command.Parameters.Add(new SqlParameter() { ParameterName = "@as_error", DbType = DbType.String, Direction = ParameterDirection.Output });
@@ -133,8 +145,10 @@ namespace Ywferia.Cloud.AccesoDatos.AccesoDatos.Genericos
             {
                 try
                 {
-                    SqlCommand command = new SqlCommand(Varias.FormatObjectSQL(esquema, "uspListTipoCorreobyId"), cn);
-                    command.CommandType = CommandType.StoredProcedure;
+                    SqlCommand command = new SqlCommand(Varias.FormatObjectSQL(esquema, "uspListTipoCorreobyId"), cn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
 
                     command.Parameters.Add(new SqlParameter() { ParameterName = "@TipoCorreoId", DbType = DbType.Int32, Direction = ParameterDirection.Input, Value = codigo });
 
@@ -144,6 +158,10 @@ namespace Ywferia.Cloud.AccesoDatos.AccesoDatos.Genericos
                         {
                             tipoCorreo.TipoCorreoId = DataUtility.ObjectToInt(dr["TipoCorreoId"]);
                             tipoCorreo.NombreTipo = DataUtility.ObjectToString(dr["NombreTipo"]).Trim();
+                            tipoCorreo.DateInsert = DataUtility.ObjectToDateTimeNull(dr["DateInsert"]);
+                            tipoCorreo.DateUpdate = DataUtility.ObjectToDateTimeNull(dr["DateUpdate"]);
+                            tipoCorreo.DateDelete = DataUtility.ObjectToDateTimeNull(dr["DateDelete"]);
+                            tipoCorreo.ActivoRows = DataUtility.ObjectToBool(dr["ActivoRows"]);
 
                         }
                     }

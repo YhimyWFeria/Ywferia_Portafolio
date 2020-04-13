@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Ywferia.Cloud.AppWebCore.Models.Genericos;
 using Ywferia.Cloud.Inyeccion;
 using Ywferia.Cloud.Logica.ILogica.IGenericos;
+using Ywferia.Cloud.Utilitarios.Enumerados;
+using System.Security.Claims;
 
 namespace Ywferia.Cloud.AppWebCore.Controllers
 {
@@ -14,7 +17,7 @@ namespace Ywferia.Cloud.AppWebCore.Controllers
         }
 
         public IActionResult TipoCorreo()
-        {
+        { 
             return View();
         }
         public IActionResult HistorialPuesto()
@@ -24,6 +27,22 @@ namespace Ywferia.Cloud.AppWebCore.Controllers
         public IActionResult HistorialCorreo()
         {
             return View();
+        }
+
+        public C_TipoCorreoVM CreaModelo(C_TipoCorreoVM p_criterio, int pagina = 1,
+                                                ColumnasJerarquiaUnidadFuncional orden = ColumnasJerarquiaUnidadFuncional.DescripcionNivelJerarquico,
+                                                DireccionOrden direccion = DireccionOrden.Asc,
+                                                RespuestaMantenimiento respuesta = RespuestaMantenimiento.Cancelar)
+        {
+            C_TipoCorreoVM criterio = p_criterio;
+
+            ViewData[AtributosPaginacion.Pagina.ToString()] = pagina;
+            ViewData[AtributosPaginacion.Orden.ToString()] = orden;
+            ViewData[AtributosPaginacion.DireccionOrden.ToString()] = direccion;
+
+             
+
+            return criterio;
         }
     }
 }

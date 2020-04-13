@@ -25,8 +25,10 @@ namespace Ywferia.Cloud.AccesoDatos.AccesoDatos.Seguridad
                 try
                 {
                     connection.Open();
-                    SqlCommand command = new SqlCommand(string.Format("{0}.{1}", AccesConfig.Esquema_seguridad, "uspGetTSeguridadUsuario"), connection);
-                    command.CommandType = CommandType.StoredProcedure;
+                    SqlCommand command = new SqlCommand(string.Format("{0}.{1}", AccesConfig.Esquema_seguridad, "uspGetTSeguridadUsuario"), connection)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
                     command.Parameters.Add(new SqlParameter("@p_usuario", usuario));
                     var data = command.ExecuteReader();
                     if (data.HasRows)
@@ -95,15 +97,18 @@ namespace Ywferia.Cloud.AccesoDatos.AccesoDatos.Seguridad
                 try
                 {
                     connection.Open();
-                    SqlCommand command = new SqlCommand(string.Format("{0}.{1}", AccesConfig.Esquema_seguridad, "uspSeguridadLogin"), connection);
-
-                    command.CommandType = CommandType.StoredProcedure;
+                    SqlCommand command = new SqlCommand(string.Format("{0}.{1}", AccesConfig.Esquema_seguridad, "uspSeguridadLogin"), connection)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
                     command.Parameters.Add(new SqlParameter("@p_usuario", usuario));
                     command.Parameters.Add(new SqlParameter("@p_pass", pass));
-                    SqlParameter pvNewId = new SqlParameter();
-                    pvNewId.ParameterName = "@p_ValOutput";
-                    pvNewId.DbType = DbType.Int32;
-                    pvNewId.Direction = ParameterDirection.Output;
+                    SqlParameter pvNewId = new SqlParameter
+                    {
+                        ParameterName = "@p_ValOutput",
+                        DbType = DbType.Int32,
+                        Direction = ParameterDirection.Output
+                    };
                     command.Parameters.Add(pvNewId);
                     command.ExecuteNonQuery();
                     Output = (int)command.Parameters["@p_ValOutput"].Value;

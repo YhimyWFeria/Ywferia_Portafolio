@@ -1,4 +1,6 @@
-﻿namespace Ywferia.Cloud.Modelo.Proyecto
+﻿using System;
+
+namespace Ywferia.Cloud.Modelo.Proyecto
 {
     public class C_Proj_Proyectos
     {
@@ -7,5 +9,9 @@
         public string UrlAddress { get; set; }
         public string Descripcion { get; set; }
         public C_Proj_Perfil Proj_Perfil { get; set; }
+        public DateTime? DateInsert { get; set; }
+        public DateTime? DateUpdate { get; set; }
+        public DateTime? DateDelete { get; set; }
+        public bool ActivoRows { get; set; }
     }
 }

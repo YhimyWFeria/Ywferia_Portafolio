@@ -1,4 +1,5 @@
 ﻿
+using System;
 using Ywferia.Cloud.Modelo.Genericos;
 
 namespace Ywferia.Cloud.Modelo.Proyecto
@@ -15,5 +16,9 @@ namespace Ywferia.Cloud.Modelo.Proyecto
         public string UbicacionActual { get; set; }
         public string Descripcion_Perfil { get; set; }
         public C_Historial_correos Historial_correos { get; set; }
+        public DateTime? DateInsert { get; set; }
+        public DateTime? DateUpdate { get; set; }
+        public DateTime? DateDelete { get; set; }
+        public bool ActivoRows { get; set; }
     }
 }

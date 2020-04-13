@@ -41,6 +41,7 @@ namespace Ywferia.Cloud.AppWebCore.Controllers
                     Microsoft.AspNetCore.Identity.SignInResult actionResult;
                     if (ResponseGetDate.TipoUsuario.Seg_TipoUsuarioId == 1)
                     {
+                       // IdentityUser identity = new IdentityUser() { EmailConfirmed = false, UserName = "yferia@sapia.com.pe", Email = "yferia@sapia.com.pe", PhoneNumber = "9", PhoneNumberConfirmed = false  };
                         actionResult = await _signInManager.PasswordSignInAsync("yferia@sapia.com.pe", "P@ssw0rd", false, false);
                     }
                     else

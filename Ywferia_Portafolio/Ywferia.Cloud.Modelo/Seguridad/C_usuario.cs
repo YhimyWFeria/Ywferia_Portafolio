@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Ywferia.Cloud.Modelo.Seguridad
@@ -22,5 +23,9 @@ namespace Ywferia.Cloud.Modelo.Seguridad
         [Display(Name = "Remember Me")]
         public bool RememberMe { get; set; }
         public string ReturnUrl { get; set; }
+        public DateTime? DateInsert { get; set; }
+        public DateTime? DateUpdate { get; set; }
+        public DateTime? DateDelete { get; set; }
+        public bool ActivoRows { get; set; }
     }
 }

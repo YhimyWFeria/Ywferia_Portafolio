@@ -1,11 +1,10 @@
-﻿using System;
-
+﻿using System; 
 namespace Ywferia.Cloud.Modelo.Genericos
 {
-    public class C_Historial_Puestos
+    public class C_Modulos
     {
-        public int Historial_PuestosId { get; set; }
-        public string Nombre_HistoriaPuesto { get; set; }
+        public int ModulosId { get; set; }
+        public string NombreModulo { get; set; }
         public DateTime? DateInsert { get; set; }
         public DateTime? DateUpdate { get; set; }
         public DateTime? DateDelete { get; set; }
