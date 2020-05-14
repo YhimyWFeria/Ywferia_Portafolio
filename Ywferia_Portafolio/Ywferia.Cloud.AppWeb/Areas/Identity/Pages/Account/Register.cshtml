@@ -1,0 +1,205 @@
+﻿@page
+@model RegisterModel
+@{
+    Layout = null;
+    ViewData["Title"] = "Register";
+}
+@*<div class="row">
+        <div class="col-md-4">
+            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <h4>Create a new account.</h4>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Input.Email"></label>
+                    <input asp-for="Input.Email" class="form-control" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Password"></label>
+                    <input asp-for="Input.Password" class="form-control" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.ConfirmPassword"></label>
+                    <input asp-for="Input.ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+        <div class="col-md-6 col-md-offset-2">
+            <section>
+                <h4>Use another service to register.</h4>
+                <hr />
+                @{
+                    if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                    {
+                        <div>
+                            <p>
+                                There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                                for details on setting up this ASP.NET application to support logging in via external services.
+                            </p>
+                        </div>
+                    }
+                    else
+                    {
+                        <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                            <div>
+                                <p>
+                                    @foreach (var provider in Model.ExternalLogins)
+                                    {
+                                        <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                    }
+                                </p>
+                            </div>
+                        </form>
+                    }
+                }
+            </section>
+        </div>
+    </div>*@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design Bootstrap</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Material Design Bootstrap -->
+    <link href="~/css/mdb.min.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="~/css/ywferia-css/Style-Account/Register.css" rel="stylesheet" />
+</head>
+
+<body class="landing-page">
+
+    <!-- Main Navigation -->
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+            <div class="container">
+                @*<a class="navbar-brand" href="#"><strong>MDB</strong></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+                            aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>*@
+                <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Login <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Intro Section -->
+        <section class="view intro-2">
+            <div class="mask rgba-gradient">
+                <div class="container h-100 d-flex justify-content-center align-items-center">
+                    <div class="d-flex align-items-center content-height">
+                        <div class="row flex-center pt-5 mt-3">
+                            <div class="col-md-6 text-center text-md-left mb-5">
+                                <div class="white-text">
+                                    <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s">
+                                        Sign up right now!
+                                    </h1>
+                                    <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+                                    <h6 class="wow fadeInLeft" data-wow-delay="0.3s">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        elit. Rem repellendus quasi fuga
+                                        nesciunt dolorum nulla magnam veniam sapiente, fugiat! Commodi sequi non animi ea
+                                        dolor molestiae, quisquam iste, maiores. Nulla.
+                                    </h6>
+                                    <br>
+                                    <a class="btn btn-outline-white btn-rounded wow fadeInLeft" data-wow-delay="0.3s">Learn more</a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-xl-5 offset-xl-1">
+                                <!-- Form -->
+                                <div class="card wow fadeInRight" data-wow-delay="0.3s">
+                                    <div class="card-body">
+                                        <!-- Header -->
+                                        <div class="text-center">
+                                            <h3 class="white-text"><i class="fas fa-user white-text"></i> Register:</h3>
+                                            <hr class="hr-light">
+                                        </div>
+                                        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                                            <div asp-validation-summary="All" class="text-danger"></div>
+                                            <!-- Body -->
+                                            <div class="md-form">
+                                                <i class="fas fa-user prefix white-text"></i>
+                                                <input type="text" asp-for="Input.NameUsers" class="form-control">
+                                                <label asp-for="Input.NameUsers" class="white-text">Nombre Usuario</label>
+                                                <span asp-validation-for="Input.NameUsers" class="text-danger"></span>
+                                            </div>
+                                            <div class="md-form">
+                                                <i class="fas fa-envelope prefix white-text"></i>
+                                                <input type="text" asp-for="Input.Email" class="form-control">
+                                                <label asp-for="Input.Email" class="white-text">Correo</label>
+                                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                            </div>
+
+                                            <div class="md-form">
+                                                <i class="fas fa-lock prefix white-text"></i>
+                                                <input type="password" asp-for="Input.Password" class="form-control">
+                                                <label asp-for="Input.Password" class="white-text">Contraseña</label>
+                                                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                            </div>
+                                            <div class="md-form">
+                                                <i class="fas fa-lock prefix white-text"></i>
+                                                <input type="password" asp-for="Input.ConfirmPassword" class="form-control">
+                                                <label asp-for="Input.ConfirmPassword" class="white-text">Confirmar Contraseña</label>
+                                                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                                            </div>
+                                            <div class="text-center mt-4">
+                                                <button class="btn btn-light-blue btn-rounded">Sign up</button>
+                                                <hr class="hr-light mb-3 mt-4">
+                                                <div class="inline-ul text-center d-flex justify-content-center">
+                                                    <a class="p-2 m-2 fa-lg tw-ic"><i class="fab fa-twitter white-text"></i></a>
+                                                    <a href="https://www.linkedin.com/in/yhimywferia/" target="_blank" class="p-2 m-2 fa-lg li-ic"><i class="fab fa-linkedin-in white-text"> </i></a>
+                                                    <a href="https://www.instagram.com/yhimyw.feria/" target="_blank" class="p-2 m-2 fa-lg ins-ic"><i class="fab fa-instagram white-text"> </i></a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- /.Form -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </header>
+    <!-- Main Navigation -->
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script src="~/js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script src="~/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/js/bootstrap.js"></script>
+    <!-- MDB core JavaScript -->
+    <script src="~/js/mdb.js"></script>
+    <script>new WOW().init();</script>
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+</body>
+
+</html>
+
+
+
+

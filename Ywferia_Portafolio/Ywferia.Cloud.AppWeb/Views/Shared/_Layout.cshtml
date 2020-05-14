@@ -1,0 +1,221 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Ywferia.Cloud.Web</title>
+    <link href="~/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/mdb.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+        var baseUrl = "@Url.Content("~")";
+    </script>
+</head>
+<body class="fixed-sn white-skin">
+
+    @*<header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Ywferia.Cloud.Web</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>*@
+
+    <header>
+
+        <!-- Sidebar navigation -->
+        <div id="slide-out" class="side-nav sn-bg-4 fixed">
+            <ul class="custom-scrollbar">
+
+                <!-- Logo -->
+                <li class="logo-sn waves-effect py-3">
+                    <div class="text-center">
+                        <a class="navbar-brand" href="#"><strong>PORTAFOLIO</strong></a>
+                    </div>
+                </li>
+
+                <!-- Search Form
+                <li>
+                    <form class="search-form" role="search">
+                        <div class="md-form mt-0 waves-light">
+                            <input type="text" class="form-control py-2" placeholder="Search">
+                        </div>
+                    </form>
+                </li>
+                     -->
+                <!-- Side navigation links -->
+                <li>
+                    <ul class="collapsible collapsible-accordion">
+
+
+                        <li>
+                            <a class="collapsible-header waves-effect arrow-r">
+                                <i class="w-fa fas fa-th"></i>Mantenimientos<i class="fas fa-angle-down rotate-icon"></i>
+                            </a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li>
+                                        @Html.ActionLink("Tipo Correo", "TipoCorreo", "Genericos", null, new { @class = "waves-effect" })
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink("Historial de correos", "HistorialCorreo", "Genericos", null, new { @class = "waves-effect" })
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink("Historial de puestos", "HistorialPuesto", "Genericos", null, new { @class = "waves-effect" })
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink("Perfil", "Perfil", "Genericos", null, new { @class = "waves-effect" })
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink("Proyectos", "Proyecto", "Proyecto", null, new { @class = "waves-effect" })
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- Simple link -->
+                        <li>
+                            <a href="#" class="collapsible-header waves-effect"><i class="w-fa far fa-bell"></i>Pefil General</a>
+                        </li>
+                        <li>
+                            <a href="#" class="collapsible-header waves-effect"><i class="w-fa fas fa-bolt"></i>Portafolio</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Side navigation links -->
+
+            </ul>
+            <div class="sidenav-bg mask-strong"></div>
+        </div>
+        <!-- Sidebar navigation -->
+        <!-- Navbar -->
+        <nav class="navbar fixed-top navbar-expand-lg scrolling-navbar double-nav">
+
+            <!-- SideNav slide-out button -->
+            <div class="float-left">
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i></a>
+            </div>
+
+
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <!-- Breadcrumb -->
+                <div class="breadcrumb-dn mr-auto">
+                    <p>Hello @User.Identity.Name!</p>
+                </div>
+            }
+            else
+            {
+                <!-- Breadcrumb -->
+                <div class="breadcrumb-dn mr-auto">
+                    <p>Profile v.3</p>
+                </div>
+            }
+            <!-- Navbar links -->
+            <ul class="nav navbar-nav nav-flex-icons ml-auto">
+
+                <!-- Dropdown
+                <li class="nav-item dropdown notifications-nav">
+                    <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <span class="badge red">3</span> <i class="fas fa-bell"></i>
+                        <span class="d-none d-md-inline-block">Notifications</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">
+                            <i class="far fa-money-bill-alt mr-2" aria-hidden="true"></i>
+                            <span>New order received</span>
+                            <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 13 min</span>
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <i class="far fa-money-bill-alt mr-2" aria-hidden="true"></i>
+                            <span>New order received</span>
+                            <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 33 min</span>
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <i class="fas fa-chart-line mr-2" aria-hidden="true"></i>
+                            <span>Your campaign is about to end</span>
+                            <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 53 min</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect"><i class="fas fa-envelope"></i> <span class="clearfix d-none d-sm-inline-block">Contact</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect"><i class="far fa-comments"></i> <span class="clearfix d-none d-sm-inline-block">Support</span></a>
+                </li>-->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect" href="#" id="userDropdown" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i> <span class="clearfix d-none d-sm-inline-block">Profile</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                         <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                            <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                        </form>  
+                        <a class="dropdown-item" href="#">My account</a>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- Navbar links -->
+
+        </nav>
+        <!-- Navbar -->
+
+    </header>
+    <main>
+        <div class="container-fluid">
+            @RenderBody()
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="page-footer pt-0 mt-5">
+
+        <!-- Copyright -->
+        <div class="footer-copyright py-3 text-center">
+            <div class="container-fluid">
+                © 2019 Copyright: <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
+
+            </div>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <script src="~/js/jquery-3.4.1.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+    <script src="~/js/mdb.min.js"></script>
+    <script>
+        // SideNav Initialization
+        $(".button-collapse").sideNav();
+
+        var container = document.querySelector('.custom-scrollbar');
+        var ps = new PerfectScrollbar(container, {
+            wheelSpeed: 2,
+            wheelPropagation: true,
+            minScrollbarLength: 20
+        });
+    </script>
+    @*<script src="~/js/site.js" asp-append-version="true"></script>*@
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

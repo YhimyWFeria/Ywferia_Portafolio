@@ -2,8 +2,8 @@
 
     iniciar: function () {
 
-        $('#Input_Usu_Nombre').SinCaracteresEspeciales(helperjs.caracterespecialesLogin);
-        $('#Input_Usu_Contrasena').SinCaracteresEspeciales(helperjs.caracterespecialesLogin);
+        //$('#Input_Usu_Nombre').SinCaracteresEspeciales(helperjs.caracterespecialesLogin);
+        //$('#Input_Usu_Contrasena').SinCaracteresEspeciales(helperjs.caracterespecialesLogin);
 
     },
     LoginIndex: function () {

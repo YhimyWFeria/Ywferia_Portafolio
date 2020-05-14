@@ -74,7 +74,7 @@ namespace Ywferia.Cloud.AccesoDatos.AccesoDatos.Seguridad
                 try
                 {
                     cn.Open();
-                    SqlCommand command = new SqlCommand(Varias.FormatObjectSQL(esquema, "uspListTipoCorreo"), cn)
+                    SqlCommand command = new SqlCommand(Varias.FormatObjectSQL(esquema, "uspListUsuariosCodigoView"), cn)
                     {
                         CommandType = CommandType.StoredProcedure
                     };

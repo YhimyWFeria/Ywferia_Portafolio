@@ -51,13 +51,14 @@ namespace Ywferia.Cloud.AppWebCore
             app.UseRouting();
 
             app.UseAuthentication();
-            app.UseAuthorization(); 
+            app.UseAuthorization();
 
+            //pattern: "{controller=Account}/{action=Index}/{id?}");
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Account}/{action=Index}/{id?}");
+                    pattern: "{area=Identity}/{controller=Account}/{action=Register}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
