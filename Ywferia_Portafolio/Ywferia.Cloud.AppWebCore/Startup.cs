@@ -15,6 +15,7 @@ namespace Ywferia.Cloud.AppWebCore
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            ViewEngines.
         }
 
         public IConfiguration Configuration { get; }
